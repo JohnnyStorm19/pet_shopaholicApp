@@ -1,24 +1,21 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Categories from "./Categories";
 import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
   Box,
-  Button,
-  IconButton,
-  SwipeableDrawer,
   Typography,
 } from "@mui/material";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 
 const Filter = () => {
-  const [showCategories, setShowCategories] = useState(false);
+  // const [showCategories, setShowCategories] = useState(false);
 
-  const handleToggleCategories = () => {
-    setShowCategories(!showCategories);
-  };
+  // const handleToggleCategories = () => {
+  //   setShowCategories(!showCategories);
+  // };
 
   return (
     <Accordion sx={{
