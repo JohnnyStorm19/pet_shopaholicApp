@@ -19,7 +19,6 @@ const MenuItemLink = ({ menuText, textColor }: IMenuItemLinkProps) => {
         padding: "5px 8px",
         "&:focus": {
           textDecoration: "underline",
-          backgroundColor: "tomato",
         },
       }}
       underline="hover"

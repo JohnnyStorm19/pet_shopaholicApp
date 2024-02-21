@@ -1,11 +1,11 @@
 import * as React from "react";
-import { Box } from '@mui/material';
-import {AppBar} from "@mui/material";
-import {Toolbar} from "@mui/material";
-import {IconButton} from "@mui/material";
-import {Menu} from "@mui/material";
+import { Box } from "@mui/material";
+import { AppBar } from "@mui/material";
+import { Toolbar } from "@mui/material";
+import { IconButton } from "@mui/material";
+import { Menu } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import {MenuItem} from "@mui/material";
+import { MenuItem } from "@mui/material";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link as RouterLink } from "react-router-dom";
 import { Link } from "@mui/material";
@@ -32,7 +32,11 @@ function ResponsiveAppBar() {
     <AppBar
       position="static"
       sx={{
-        p: "2rem",
+        paddingBlock: "2rem",
+        paddingInline: {
+          xs: ".5rem",
+          sm: "1rem"
+        },
         mb: 2,
       }}
     >
@@ -41,10 +45,17 @@ function ResponsiveAppBar() {
         sx={{
           gap: ".5rem",
           justifyContent: { xs: "center", md: "left" },
+          flexWrap: 'wrap'
         }}
       >
         <Box sx={{ display: { sx: "none", md: "flex" }, alignItems: "center" }}>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1, color: 'info.main' }} />
+          <AdbIcon
+            sx={{
+              display: { xs: "none", md: "flex" },
+              mr: 1,
+              color: "info.main",
+            }}
+          />
           <Link
             variant="h5"
             component={RouterLink}
@@ -87,11 +98,11 @@ function ResponsiveAppBar() {
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
             sx={{
-              display: { xs: "block", md: "none" },
+              display: { xs: "block", md: "none" }
             }}
           >
             {pages.map((page) => (
-              <MenuItem key={page} onClick={handleCloseNavMenu}>
+              <MenuItem key={page} onClick={handleCloseNavMenu} sx={{fontWeight: "bold"}}>
                 <MenuItemLink
                   menuText={page}
                   textColor="primary.contrastText"
@@ -102,7 +113,13 @@ function ResponsiveAppBar() {
         </Box>
 
         <Box sx={{ display: "flex" }}>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1, color: 'info.main' }} />
+          <AdbIcon
+            sx={{
+              display: { xs: "flex", md: "none" },
+              mr: 1,
+              color: "info.main",
+            }}
+          />
           <Link
             variant="h5"
             component={RouterLink}
@@ -121,7 +138,7 @@ function ResponsiveAppBar() {
         <Box
           sx={{
             display: { xs: "none", md: "flex" },
-            flexGrow: 0,
+            flexGrow: 1,
             gap: "1rem",
             fontWeight: "bold",
           }}
@@ -134,9 +151,22 @@ function ResponsiveAppBar() {
             />
           ))}
         </Box>
-
-        <SearchForm />
+        <Box
+          sx={{
+            display: { xs: "none", sm: "flex" },
+          }}
+        >
+          <SearchForm />
+        </Box>
         <Cart />
+        <Box
+          sx={{
+            display: { xs: "block", sm: "none" },
+            mx: "auto",
+          }}
+        >
+          <SearchForm />
+        </Box>
       </Toolbar>
     </AppBar>
   );

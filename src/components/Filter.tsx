@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
+import Sorting from "./Sorting";
 
 const Filter = () => {
   // const [showCategories, setShowCategories] = useState(false);
@@ -42,11 +43,8 @@ const Filter = () => {
       </AccordionSummary>
       <AccordionDetails>
         <Box>
-          {/* <Button onClick={handleToggleCategories} variant="outlined" sx={{mb: 2}}>
-            {showCategories ? "hide categories" : "show categories"}
-          </Button> */}
-          {/* <Categories show={showCategories} /> */}
-          <Categories show={true} />
+          <Categories />
+          <Sorting />
         </Box>
       </AccordionDetails>
     </Accordion>

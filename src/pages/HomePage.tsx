@@ -1,12 +1,15 @@
-import Banner from "../components/Banner"
+import Banner from "../components/Banner";
+import CategoryBlock from "../components/CategoryBlock";
 
 const HomePage = () => {
   return (
     <>
-      I am homepage
       <Banner />
+      <CategoryBlock category="home-decoration" />
+      <CategoryBlock category="laptops" />
+      <CategoryBlock category="sunglasses" />
     </>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

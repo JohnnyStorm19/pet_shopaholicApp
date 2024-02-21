@@ -9,6 +9,9 @@ export const productsApi = createApi({
     getAllProducts: builder.query<IResponse, number>({
       query: (skipNumber) => `/products?limit=10&skip=${skipNumber}`,
     }),
+    getAllProductsWithoutPage: builder.query<IResponse, void>({
+      query: () => `/products`,
+    }),
     getCategories: builder.query<string[], void>({
       query: () => `/products/categories`,
     }),
@@ -20,4 +23,4 @@ export const productsApi = createApi({
     })
   }),
 });
-export const { useGetAllProductsQuery, useGetCategoriesQuery, useGetProductsByCategoryQuery, useGetProductByIdQuery } = productsApi;
+export const { useGetAllProductsQuery, useGetCategoriesQuery, useGetProductsByCategoryQuery, useGetProductByIdQuery, useGetAllProductsWithoutPageQuery } = productsApi;

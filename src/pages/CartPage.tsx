@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { useAppSelector } from "../store/hooks";
 import CartItem from "../components/CartItem";
 import { getTotalSum } from "../services/utils/getTotalSum";
@@ -13,27 +13,41 @@ const CartPage = () => {
         <Box
           sx={{
             display: "flex",
+            flexDirection: "column",
             gap: 2,
           }}
         >
           <Box
             sx={{
-              flexGrow: 1,
+              display: "flex",
+              flexDirection: "column",
+              gap: "2rem",
             }}
           >
             {cartProducts.map((item) => {
               return <CartItem key={item.product.id} product={item.product} />;
             })}
           </Box>
-          <Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: ".5rem",
+            }}
+          >
             <Typography
+              variant="h4"
               sx={{
                 position: "sticky",
                 top: "15px",
+                textAlign: "right",
               }}
             >
-              Total: {getTotalSum(cartProducts)}
+              Total: ${getTotalSum(cartProducts)}
             </Typography>
+            <Button variant="contained" size="large" sx={{
+              marginLeft: "auto"
+            }}>Checkout</Button>
           </Box>
         </Box>
       )}

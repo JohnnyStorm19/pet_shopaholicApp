@@ -1,13 +1,14 @@
-import { Typography } from "@mui/material";
+import { Typography, TypographyTypeMap } from "@mui/material";
 
 interface OldPriceProps {
   oldPrice: number;
+  variant: TypographyTypeMap["props"]["variant"];
 }
 
-const OldPrice = ({ oldPrice }: OldPriceProps) => {
+const OldPrice = ({ oldPrice, variant }: OldPriceProps) => {
   return (
     <Typography
-      variant="h6"
+      variant={variant}
       sx={{
         textDecoration: "line-through",
         opacity: ".5",

@@ -47,14 +47,14 @@ const CartItem = ({ product }: CartItemProps) => {
 
   const onCartItemClick = () => {
     navigate(`/products/${product.id}`);
-  }
+  };
 
   return (
-    <Card 
+    <Card
       sx={{
-        display: 'flex',
-        gap: '1rem',
-        alignItems: 'center',
+        display: "flex",
+        gap: "1rem",
+        alignItems: "center",
       }}
       onClick={onCartItemClick}
     >
@@ -67,28 +67,43 @@ const CartItem = ({ product }: CartItemProps) => {
           height: "100px",
         }}
       />
-      <CardHeader title={product.title} subheader={product.brand} sx={{
-        minWidth: '330px'
-      }} />
-      <CardContent sx={{
-      }}>
-         <Typography>
-            Unit price: ${product.price}
-        </Typography>   
+      <CardHeader
+        title={product.title}
+        subheader={product.brand}
+        sx={{
+          minWidth: "330px",
+        }}
+      />
+      <CardContent sx={{}}>
+        <Typography>Unit price: ${product.price}</Typography>
         <Typography>
-            Total price: ${product.price * (cartItemQuantity ? cartItemQuantity : 1)}
-        </Typography>  
+          Total price: $
+          {product.price * (cartItemQuantity ? cartItemQuantity : 1)}
+        </Typography>
       </CardContent>
-      <CardActions disableSpacing sx={{ width: 'fit-content', flexGrow: 1, display: 'flex', justifyContent: 'space-around' }}>
-          <Box display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
-            <IconButton size="small" onClick={decrementItem}>
-              <RemoveCircleOutlineIcon color="error" />
-            </IconButton>
-            <Typography>{cartItemQuantity && cartItemQuantity}</Typography>
-            <IconButton size="small" onClick={incrementItem}>
-              <AddCircleOutlineIcon color="error" />
-            </IconButton>
-          </Box>
+      <CardActions
+        disableSpacing
+        sx={{
+          width: "fit-content",
+          flexGrow: 1,
+          p: 0,
+          display: "flex",
+          justifyContent: "space-around",
+        }}
+      >
+        <Box
+          display={"flex"}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+        >
+          <IconButton size="small" onClick={decrementItem}>
+            <RemoveCircleOutlineIcon color="error" />
+          </IconButton>
+          <Typography>{cartItemQuantity && cartItemQuantity}</Typography>
+          <IconButton size="small" onClick={incrementItem}>
+            <AddCircleOutlineIcon color="error" />
+          </IconButton>
+        </Box>
         {/* <Box display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
         </Box> */}
         <Button variant="text" color="error" onClick={removeItem}>

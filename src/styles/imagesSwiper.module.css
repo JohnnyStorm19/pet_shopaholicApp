@@ -1,6 +1,35 @@
+.swiperSlide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .swiperImg {
-    width: '100%'; 
-    maxHeight: '500px'; 
-    objectFit: 'cover'; 
-    objectPosition: 'center';
+    width: 100%; 
+    object-fit: contain; 
+    object-position: center;
+}
+
+@media (min-width: 0px) {
+    .swiper {
+        height: auto;
+    }
+}
+
+@media (min-width: 600px) {
+    .swiper {
+        height: auto;
+    }
+}
+
+@media (min-width: 0px) {
+    .swiperImg {
+        height: 400px;
+    }
+}
+
+@media (min-width: 600px) {
+    .swiperImg {
+        height: 600px;
+    }
 }
