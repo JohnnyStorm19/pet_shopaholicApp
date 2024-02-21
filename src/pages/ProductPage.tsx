@@ -135,7 +135,7 @@ const ProductPage = () => {
                 md: 2
               }
             }}>
-              <OldPrice oldPrice={product?.price} />
+              <OldPrice oldPrice={product?.price} variant="h6" />
               <FinalPrice
                 price={product.price}
                 discount={product.discountPercentage}
