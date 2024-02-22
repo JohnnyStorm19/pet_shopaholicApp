@@ -16,7 +16,9 @@ const ProductsList = ({
   return (
     <>
       {componentFor === "CataloguePage" && (
-        <Grid container spacing={2} ref={containerRef}>
+        <Grid container spacing={2} ref={containerRef} sx={{
+          mb: 3
+        }}>
           {products.length > 0 &&
             products.map((item) => {
               return (

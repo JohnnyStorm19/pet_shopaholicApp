@@ -18,6 +18,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useRef, useState } from "react";
 import { useAppSelector } from "../store/hooks";
 import { Link as RouterLink } from "react-router-dom";
+import { getFinalPrice } from "../services/utils/getFinalPrice";
 
 const Cart = () => {
   const cartStore = useAppSelector((state) => state.cart.cart);
@@ -141,7 +142,7 @@ const Cart = () => {
                             <Typography
                               align="right"
                             >
-                              ${item.product.price}
+                              ${getFinalPrice(item.product.price, item.product.discountPercentage)}
                             </Typography>
                           </ListItemText>
                         </MenuItem>

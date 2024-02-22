@@ -146,7 +146,6 @@ const ProductPage = () => {
                 color="error"
                 size={"small"}
                 sx={{
-                  alignSelf: "flex-start"
                 }}
               />
             </Box>

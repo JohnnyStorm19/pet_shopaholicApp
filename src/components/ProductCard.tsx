@@ -126,6 +126,9 @@ const ProductCard = ({ productData, componentFor }: IProductCardProps) => {
                 onClick={handleAddToCart}
                 variant={inCart ? "text" : "contained"}
                 color={inCart ? "error" : "primary"}
+                sx={{
+                  width: "100%",
+                }}
               >
                 {inCart ? "Remove from cart" : "Add to cart"}
               </Button>
@@ -179,11 +182,11 @@ const ProductCard = ({ productData, componentFor }: IProductCardProps) => {
                 p: 1
               }
             }}>
-              <OldPrice oldPrice={productData.price} variant={'caption'} />
+              <OldPrice oldPrice={productData.price} variant={'body2'} />
               <FinalPrice
                 price={productData.price}
                 discount={productData.discountPercentage}
-                variant="subtitle1"
+                variant="h6"
               />
             </CardContent>
           </Box>

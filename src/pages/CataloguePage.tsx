@@ -56,7 +56,7 @@ const CataloguePage = () => {
 
   const gridContainer = useRef<HTMLDivElement>(null);
 
-  // ! спрятать логику в кастомные хуки
+  // ! спрятать эффекты
 
   useEffect(() => {
     const isProductsAreInStore = products.find(p => p.id === data?.products[0].id);
@@ -106,7 +106,6 @@ const CataloguePage = () => {
       dispatch(removeFromFilteredProducts({ categories: categoriesInStore }));
     }
     if (lastAction === "removed" && categoriesInStore.length === 0) {
-      console.log('no categories in store', categoriesInStore);
       dispatch(clearFilteredProducts());
     }
   }, [categoriesInStore, lastAction, dispatch]); 

@@ -54,6 +54,7 @@ const CartItem = ({ product }: CartItemProps) => {
       sx={{
         display: "flex",
         gap: "1rem",
+        flexWrap: 'wrap',
         alignItems: "center",
       }}
       onClick={onCartItemClick}
@@ -65,16 +66,19 @@ const CartItem = ({ product }: CartItemProps) => {
         sx={{
           width: "100px",
           height: "100px",
+          ml: 2,
+          mt: 2,
         }}
       />
       <CardHeader
         title={product.title}
         subheader={product.brand}
         sx={{
-          minWidth: "330px",
+          maxWidth: "330px",
+          
         }}
       />
-      <CardContent sx={{}}>
+      <CardContent sx={{display: 'flex', gap: 2, flexWrap: 'wrap'}}>
         <Typography>Unit price: ${product.price}</Typography>
         <Typography>
           Total price: $
@@ -84,11 +88,15 @@ const CartItem = ({ product }: CartItemProps) => {
       <CardActions
         disableSpacing
         sx={{
-          width: "fit-content",
           flexGrow: 1,
-          p: 0,
+          pr: 2,
+          gap: 1,
           display: "flex",
-          justifyContent: "space-around",
+          flexWrap: "wrap",
+          justifyContent: {
+            xs: "flex-start",
+            sm: 'flex-end'
+          }
         }}
       >
         <Box
