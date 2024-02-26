@@ -7,33 +7,37 @@
 <div align="center">
 
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
-  [![StorePet_app](https://github.com/JohnnyStorm19/pet_StoreApp/actions/workflows/web.yml/badge.svg)](https://github.com/JohnnyStorm19/pet_StoreApp/actions/workflows/web.yml)
-
+  [![pet_ShopaholicApp](https://github.com/JohnnyStorm19/pet_shopaholicApp/actions/workflows/web.yml/badge.svg)](https://github.com/JohnnyStorm19/pet_shopaholicApp/actions/workflows/web.yml)
 </div>
 
 ---
-## 🚀[Запустить проект](https://pet-store-app-dun.vercel.app/)
+## 🚀[Запустить проект](https://pet-shopaholic-app.vercel.app/)
 
 
 ## 🧐 О проекте <a name = "about"></a>
-Интернет-магазин <strong>Крем-сода</strong>. Магазин наполнен ультра-стильными вещами с ультра-стильными фотографиями из бесплатных стоков. Одежда и акссесуары для женщин и мужчин. 
+Интернет-магазин <strong>Shopaholic</strong>. В магазине представлены товары по 20 категориям товаров: от техники до круп. Проект работает с базой данных [dummyJSON](https://dummyjson.com/docs/products). Интерфейс и компоненты взяты из библиотеки [Material UI](https://mui.com/material-ui/getting-started/)  
 
 <strong>Реализована логика: </strong>
 - фильтры в каталоге
-- возможность добавить в избранное
-- страницы товаров
+- фильтры при выборе категорий
+- подгрузка товаров при скролле
+  
+#### ***Проект дорабатывается, планируются следующие фичи***:
+- возможность сохранить товар в избранное
+- авторизация
 
 ## ⛏️ Стек проекта <a name = "built_using"></a>
-[![My Skills](https://skillicons.dev/icons?i=ts,vite,react,redux,tailwind)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=ts,vite,react,redux,css,materialui)](https://skillicons.dev)
 - [Typescript](https://redux-toolkit.js.org/) - language
 - [Vite](https://react.dev/) - web tool
 - [React](https://react.dev/) - web framework (да-да, или библиотека)
+- [dummyJSON](https://swiperjs.com/) - база данных
 - [Redux Toolkit](https://redux-toolkit.js.org/) - store
-- [React Router](https://github.com/remix-run/react-router) - routing
-- [Tailwind](https://tailwindcss.com/) - CSS framework
-- [Swiper](https://swiperjs.com/) - карусель на главной странице
-- база данных составлена самостоятельно
+- [RTK Query](https://redux-toolkit.js.org/rtk-query/overview) - работа с запросами в базу данных и ответами
+- [React Router](https://github.com/remix-run/react-router) - роутинг
+- [Material UI](https://mui.com/material-ui/) - библиотека UI-компонентов
+- [Swiper](https://swiperjs.com/) - карусель на главной странице + слайдеры на странице с продуктом
 
 ## ✍️ Разработка <a name = "authors"></a>
-- [@JohnnyStorm19](https://github.com/JohnnyStorm19) - идея, разработка веб-приложения
+- [@JohnnyStorm19](https://github.com/JohnnyStorm19) - идея, разработка веб-приложения, веб-дизайн
 - [@AnaKlsnkv](https://t.me/AnaKlsnkv) - веб-дизайн
