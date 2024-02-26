@@ -8,7 +8,7 @@ const CartPage = () => {
   return (
     <Box>
       {!cartProducts.length ? (
-        <Typography>No items added</Typography>
+        <Typography variant="h4" align="center">No items added</Typography>
       ) : (
         <Box
           sx={{

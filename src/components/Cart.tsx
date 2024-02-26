@@ -46,15 +46,6 @@ const Cart = () => {
     }
   }
 
-  // const prevOpen = useRef(open);
-  // useEffect(() => {
-  //   if (prevOpen.current === true && open === false) {
-  //     anchorRef.current!.focus();
-  //   }
-
-  //   prevOpen.current = open;
-  // }, [open]);
-
   return (
     <Box
       sx={{
@@ -102,7 +93,7 @@ const Cart = () => {
                   }}
 
                 >
-                  No items aded
+                  No items added
                 </Typography>
               )
               }

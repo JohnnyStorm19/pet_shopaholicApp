@@ -112,8 +112,6 @@ const CartItem = ({ product }: CartItemProps) => {
             <AddCircleOutlineIcon color="error" />
           </IconButton>
         </Box>
-        {/* <Box display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
-        </Box> */}
         <Button variant="text" color="error" onClick={removeItem}>
           Remove
         </Button>
