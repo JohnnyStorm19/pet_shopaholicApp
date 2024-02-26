@@ -52,6 +52,38 @@ const theme = createTheme({
         // },
       },
     },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          backgroundColor: "#ffffff",
+          // "&:hover": {
+          //     outlineStyle: "solid",
+          //     outlineColor: "#190bb9",
+          //     outlineWidth: "3px",
+          // },
+          outlineWidth: "2px",
+          outlineColor: "#1377df",
+          outlineStyle: "solid",
+          '@media (hover: hover)': {
+            "&:hover": {
+              outlineStyle: "solid",
+              outlineColor: "#190bb9",
+              outlineWidth: "3px",
+            },
+          },
+          '@media (hover: none)': {
+            "&:active": {
+              outlineStyle: "solid",
+              outlineColor: "#190bb9",
+              outlineWidth: "3px",
+            },
+          },
+        }
+      }
+    }
   },
   palette: {
     primary: {

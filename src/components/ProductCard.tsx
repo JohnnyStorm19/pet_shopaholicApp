@@ -22,18 +22,15 @@ interface IProductCardProps {
   componentFor: "CataloguePage" | "CategoryBlock";
 }
 
+
 const ProductCard = ({ productData, componentFor }: IProductCardProps) => {
   const cartStore = useAppSelector((state) => state.cart.cart);
-  const [isHovered, setIsHovered] = useState(false);
   const [inCart, setInCart] = useState(
     cartStore.find((item) => item.product.id === productData.id) || false
   );
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  const handleCardHover = () => {
-    setIsHovered(!isHovered);
-  };
   const handleAddToCart = (e: React.SyntheticEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     if (!inCart) {
@@ -54,22 +51,9 @@ const ProductCard = ({ productData, componentFor }: IProductCardProps) => {
         <Grid item xs={12} sm={6} md={4} onClick={handleCardClick}>
           <Card
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              backgroundColor: "primary.main",
-              ":hover": {
-                borderColor: "info.main",
-                borderWidth: "3px",
-              },
-              borderWidth: "2px",
-              borderColor: "info.light",
-              borderStyle: "solid",
               height: "400px",
             }}
             variant="outlined"
-            onMouseEnter={handleCardHover}
-            onMouseLeave={handleCardHover}
           >
             <Box display={"flex"} justifyContent={"space-between"}>
               <CardHeader
@@ -140,32 +124,20 @@ const ProductCard = ({ productData, componentFor }: IProductCardProps) => {
         <Card
           onClick={handleCardClick}
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            backgroundColor: "primary.main",
-            ":hover": {
-              outlineStyle: "solid",
-              outlineColor: "info.main",
-              outlineWidth: "3px",
-            },
-            outlineWidth: "2px",
-            outlineColor: "info.light",
-            outlineStyle: "solid",
-            flexShrink: '0',
+            flexShrink: "0",
             width: {
               xs: "250px",
               sm: "auto",
-            }
+            },
           }}
           variant="outlined"
-          onMouseEnter={handleCardHover}
-          onMouseLeave={handleCardHover}
         >
-          <Box sx={{
-            display: "flex", 
-            flexDirection: {xs: 'column', md: 'row'}
-          }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+            }}
+          >
             <CardHeader
               title={productData.title}
               subheader={productData.brand}
@@ -176,13 +148,15 @@ const ProductCard = ({ productData, componentFor }: IProductCardProps) => {
                 p: 1,
               }}
             />
-            <CardContent sx={{
-              p: 1,
-              ":last-child": {
-                p: 1
-              }
-            }}>
-              <OldPrice oldPrice={productData.price} variant={'body2'} />
+            <CardContent
+              sx={{
+                p: 1,
+                ":last-child": {
+                  p: 1,
+                },
+              }}
+            >
+              <OldPrice oldPrice={productData.price} variant={"body2"} />
               <FinalPrice
                 price={productData.price}
                 discount={productData.discountPercentage}
@@ -195,7 +169,7 @@ const ProductCard = ({ productData, componentFor }: IProductCardProps) => {
               position: "relative",
               height: {
                 xs: "150px",
-                md: "250px"
+                md: "250px",
               },
               overflow: "hidden!important",
               borderTopLeftRadius: "8px",
