@@ -25,6 +25,7 @@
 #### ***Проект дорабатывается, планируются следующие фичи***:
 - возможность сохранить товар в избранное
 - авторизация
+- поиск товаров
 
 ## ⛏️ Стек проекта <a name = "built_using"></a>
 [![My Skills](https://skillicons.dev/icons?i=ts,vite,react,redux,css,materialui)](https://skillicons.dev)
