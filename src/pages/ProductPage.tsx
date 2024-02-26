@@ -45,51 +45,55 @@ const ProductPage = () => {
     e.stopPropagation();
     if (!inCart && product) {
       dispatch(addToCart({ product }));
-      navigate(`/cart`);
-    } else if (inCart && product) {
-      navigate(`/cart`);
     }
+    navigate(`/cart`);
   };
 
   return (
-    <Box sx={{
-      display: 'flex',
-      flexDirection: {
-        xs: 'column',
-        md: 'row'
-      },
-      paddingBlock: 2,
-      mb: 2,
-      gap: {
-        xs: 2,
-        md: 13,
-      },
-    }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: {
+          xs: "column",
+          md: "row",
+        },
+        paddingBlock: 2,
+        mb: 2,
+        gap: {
+          xs: 2,
+          md: 13,
+        },
+      }}
+    >
       {isLoading && <MyLoader position="center" />}
       {isError && <MyError />}
 
-      <Box sx={{
-        maxWidth: {
-          xs: '100%',
-          md: '40%'
-        }
-      }}>
+      <Box
+        sx={{
+          maxWidth: {
+            xs: "100%",
+            md: "40%",
+          },
+        }}
+      >
         {product && <ImagesSwiper images={product.images} />}
       </Box>
 
       <Box display={"flex"} flexDirection={"column"} rowGap={"2rem"}>
         <Typography variant="h2">{product?.title}</Typography>
-        <Box sx={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: {
-            xs: 1,
-          },
-          flexWrap: {
-            xs: 'wrap',
-          }
-        }}>
-          <Box display={'flex'} alignItems={'center'} gap={1}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: {
+              xs: 1,
+            },
+            flexWrap: {
+              xs: "wrap",
+            },
+          }}
+        >
+          <Box display={"flex"} alignItems={"center"} gap={1}>
             <Typography sx={{ color: "info.light" }}>Rating: </Typography>
             <Typography>{product?.rating}</Typography>
           </Box>
@@ -98,7 +102,7 @@ const ProductPage = () => {
             orientation="vertical"
             sx={{ borderColor: "rgba(25, 118, 210, .7)" }}
           />
-          <Box display={'flex'} alignItems={'center'} gap={1}>
+          <Box display={"flex"} alignItems={"center"} gap={1}>
             <Typography sx={{ color: "info.light" }}>Brand: </Typography>
             <Typography>{product?.brand}</Typography>
           </Box>
@@ -107,7 +111,7 @@ const ProductPage = () => {
             orientation="vertical"
             sx={{ borderColor: "rgba(25, 118, 210, .7)" }}
           />
-          <Box display={'flex'} alignItems={'center'} gap={1}>
+          <Box display={"flex"} alignItems={"center"} gap={1}>
             <Typography sx={{ color: "info.light" }}>Category: </Typography>
             <Typography>{product?.category}</Typography>
           </Box>
@@ -126,31 +130,31 @@ const ProductPage = () => {
             Buy now
           </Button>
         </Box>
-          {product && (
-            <Box sx={{
+        {product && (
+          <Box
+            sx={{
               display: "flex",
               alignItems: "center",
               gap: {
                 xs: 1,
-                md: 2
-              }
-            }}>
-              <OldPrice oldPrice={product?.price} variant="h6" />
-              <FinalPrice
-                price={product.price}
-                discount={product.discountPercentage}
-                variant="h4"
-              />
-              <Chip
-                label={`-${product.discountPercentage}% off`}
-                color="error"
-                size={"small"}
-                sx={{
-                }}
-              />
-            </Box>
-          )}
-
+                md: 2,
+              },
+            }}
+          >
+            <OldPrice oldPrice={product?.price} variant="h6" />
+            <FinalPrice
+              price={product.price}
+              discount={product.discountPercentage}
+              variant="h4"
+            />
+            <Chip
+              label={`-${product.discountPercentage}% off`}
+              color="error"
+              size={"small"}
+              sx={{}}
+            />
+          </Box>
+        )}
       </Box>
     </Box>
   );
